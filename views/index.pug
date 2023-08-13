@@ -1,0 +1,56 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="../style.css")
+        link(href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet')
+        title Weather App 
+    body 
+        section.region-input 
+            form(action="" class="form")
+                div 
+                    //- label(for="country") Country 
+                    //- input(type="text" name="country" id="country")
+                    label(for="city") Region 
+                    input(type="text" name="region" id="region")    
+                button(type="submit" id="submitBtn") Search 
+        //- Main Dashboard
+        section.dashboard 
+            //- Current Weather Display
+            main.current-info
+                //- City, Date etc. 
+                header.top 
+                    h2.city-name #{weatherData.location.name}, #{weatherData.location.country}
+                    span.date-time 
+                        | #{weatherData.location.localtime}
+                //- Weather information
+                div.current-display 
+                    //- Main weather card
+                    div.content
+                        img(src=weatherData.current.condition.icon, alt="")
+                        span.temperature 
+                            | #{weatherData.current.temp_c}&deg;C 
+                        div.extras
+                            p.condition 
+                                | #{weatherData.current.condition.text}
+                            p.humidity
+                                | Humidity: #{weatherData.current.humidity}%
+                        p.last-updated 
+                            | Last Updated: #{weatherData.current.last_updated}
+                    //- Side Boxes of information
+                    div.sub-content
+                        div.wind-speed.box
+                            span.material-icons air 
+                            span.text Wind Spd. 
+                            span.text #{weatherData.current.wind_mph} mph 
+                        div.wind-direction.box
+                            span.material-icons explore 
+                            span.text Wind Dir.
+                            span.text #{weatherData.current.wind_dir} 
+                        div.cloudy.box
+                            span.material-icons cloud 
+                            span.text Cloudy 
+                            span.text #{weatherData.current.cloud} %
+
+            section.forecast 

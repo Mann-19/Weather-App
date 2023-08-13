@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+:root{
+    --blue-font: #0b93e4;
+    --white-font: white;
+    --skyblue-bg: #bce6ff;
+    --skyblue-font: #55c7f0;
+    --blue-card: #0182d2;
+}
+
+body::before{
+    content: "";
+    background: url('./Images/1125d521002afa494cc684eab5b57fff.jpg') no-repeat center center/cover;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.8;
+}
+
+/* REGION INPUTS */
+.form{
+    border: 2px solid var(--blue-card);
+    background-color: var(--skyblue-bg);
+    border-radius: 10px;
+    position: absolute;
+    top: 38%;
+    left: 5%;
+    transform: translateY(-50%);
+    padding: 20px;
+    width: 20vw;
+    height: max-content;
+}
+
+.form label{
+    color: var(--blue-font);
+    display: block;
+    font-size: 1.4rem;
+}
+
+.form input{
+    border: 1px solid var(--blue-font);
+    border-radius: 5px;
+    opacity: 0.5;
+    outline: none;
+    margin: 5px 0 30px;
+    padding: 5px;
+    width: 100%;
+}
+
+.form button{
+    cursor: pointer;
+    width: 100%;
+    padding: 5px;
+    font-size: 1.2rem;
+    border: none; 
+    border-radius: 5px;
+    color: var(--white-font);
+    background-color: var(--blue-card);
+}
+
+/* DASHBOARD -------------------------*/
+.dashboard{
+    /* border: 2px solid black; */
+    box-shadow: 20px 20px 10px rgba(43, 43, 43, 0.658);
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    width: 60vw;
+    height: 70vh;
+    display: flex;
+}
+
+
+/* CURRENT INFORMATION DISPLAY ----------------*/
+.current-info{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    padding: 20px;
+    background-color: var(--skyblue-bg);
+    border-radius: 10px 0 0 10px;
+}
+
+
+/* header information ------------------- */
+.top .city-name{
+    color: var(--skyblue-font);
+}
+.top .date-time{
+    font-size: 1.2rem;
+    color: var(--blue-font);
+}
+
+/* weather information ----------------------- */
+.current-display{
+    height: 30em;
+    display: flex;
+    margin-top: 10px;
+}
+
+/* weather card ---------------------- */
+.content{
+    background-color: var(--blue-card);
+    color: var(--white-font);
+    border-radius: 5px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.content .temperature{
+    font-size: 2rem;
+}
+.content img{
+    width: 70px;
+    height: 70px;
+    margin: 20px auto 10px;
+}
+
+.extras{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.last-updated{
+    margin-top: 20px;
+    font-size: 0.6rem;
+}
+
+/* sub(side) information ------------- */
+.sub-content{
+    width: 40%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.box{
+    border-radius: 5px;
+    background-color: var(--blue-font);
+    width: 90px;
+    padding: 10px;
+    display: grid;
+    place-items: center;
+    opacity: 0.4;
+}
+
+.box .material-icons{
+    filter: invert(1);
+    font-size: 30px;
+}
+
+.box .text{
+    color: var(--white-font);
+    font-size: 13px;
+}
+
+
+/* FORECAST SECTION */
+.forecast{
+    width: 40%;
+    padding: 20px;
+    background-color: var(--white-font);
+    border-radius: 0px 10px 10px 0px;
+    opacity: 0.8;
+}
