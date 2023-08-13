@@ -4,6 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "compile:pug": "pug views -o public",
     "devStart": "nodemon server.js",
     "start": "node server.js"
   },
@@ -13,7 +14,8 @@
     "body-parser": "^1.20.2",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
-    "pug": "^3.0.2"
+    "pug": "^3.0.2",
+    "pug-cli": "^1.0.0-alpha6"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"

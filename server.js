@@ -1,7 +1,6 @@
 require("dotenv").config();
 
 const bodyParser = require("body-parser");
-const pug = require('pug');
 const express = require("express");
 const app = express();
 
@@ -44,10 +43,7 @@ app.get("/", async (req, res) => {
     weatherData = await fetchWeatherData('London');
   }
 
-  const compiledTemplate = pug.compileFile("views/index.pug");
-  const renderedHtml = compiledTemplate({ weatherData });
-
-  res.status(200).send(renderedHtml);
+  res.status(200).render("index", { weatherData: weatherData });
 });
 
 app.listen(3000, () => {
