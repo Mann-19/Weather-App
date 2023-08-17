@@ -18,7 +18,7 @@ body::before{
     content: "";
     background: url('./Images/1125d521002afa494cc684eab5b57fff.jpg') no-repeat center center/cover;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -28,8 +28,9 @@ body::before{
 
 /* REGION INPUTS */
 .form{
-    border: 2px solid var(--blue-card);
+    display: grid;
     background-color: var(--skyblue-bg);
+    box-shadow: 20px 20px 10px rgba(43, 43, 43, 0.658);
     border-radius: 10px;
     position: absolute;
     top: 38%;
@@ -69,7 +70,6 @@ body::before{
 
 /* DASHBOARD -------------------------*/
 .dashboard{
-    /* border: 2px solid black; */
     box-shadow: 20px 20px 10px rgba(43, 43, 43, 0.658);
     border-radius: 10px;
     position: absolute;
@@ -77,8 +77,9 @@ body::before{
     left: 60%;
     transform: translate(-50%, -50%);
     width: 60vw;
-    height: 70vh;
-    display: flex;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: auto;
 }
 
 
@@ -86,7 +87,6 @@ body::before{
 .current-info{
     display: flex;
     flex-direction: column;
-    width: 60%;
     padding: 20px;
     background-color: var(--skyblue-bg);
     border-radius: 10px 0 0 10px;
@@ -104,50 +104,48 @@ body::before{
 
 /* weather information ----------------------- */
 .current-display{
-    height: 30em;
-    display: flex;
+    display: grid;
+    grid-template-columns: 70% 30%;
     margin-top: 10px;
 }
 
 /* weather card ---------------------- */
 .content{
+    padding: 1rem;
     background-color: var(--blue-card);
     color: var(--white-font);
     border-radius: 5px;
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    height: fit-content;
+    grid-template-rows: repeat(4, 1fr);
+    place-items: center;
 }
 .content .temperature{
     font-size: 2rem;
 }
 .content img{
-    width: 70px;
-    height: 70px;
-    margin: 20px auto 10px;
+    width: 4rem;
+    height: 4rem;
 }
 
 .extras{
     text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
 }
 
 .last-updated{
-    margin-top: 20px;
     font-size: 0.6rem;
 }
 
 /* sub(side) information ------------- */
 .sub-content{
-    width: 40%;
-    padding: 10px;
+    height: max-content;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    gap: 1rem;
 }
 
 .box{
@@ -173,9 +171,96 @@ body::before{
 
 /* FORECAST SECTION */
 .forecast{
-    width: 40%;
     padding: 20px;
     background-color: var(--white-font);
     border-radius: 0px 10px 10px 0px;
     opacity: 0.8;
+}
+
+/* RESPONSIVE DESIGNING */
+
+/* tablet version */
+@media (max-width: 945px){
+    body::before{
+        height: 150vh;
+    }
+
+    .form{
+        grid-template-columns: 70% 30%;
+        width: 70vw;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        column-gap: 10px;
+    }
+    .form label{
+        grid-column: 1 / 3;
+    }
+    .form input, .form button{
+        margin: 0;
+    }
+
+    .dashboard{
+        top: 90%;
+        left: 50%;
+        width: 70vw;
+        grid-template-columns: auto;
+        grid-template-rows: max-content auto;
+    }
+
+    .current-info{
+        border-radius: 10px 10px 0 0;
+    }
+
+    .forecast{
+        border-radius: 0 0 10px 10px;
+    }
+
+    .current-display{
+        gap: 10px;
+        grid-template-columns: auto;
+    }
+
+    .content{
+        grid-template-rows: repeat(4, 1fr);
+    }
+
+    .sub-content{
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .box{
+        width: 33%;
+        height: 100px;
+    }
+}
+
+/* mobile version */
+@media (max-width: 455px) {
+    .form{
+        width: 90vw;
+    }
+
+    .dashboard{
+        width: 90vw;
+    }
+}
+
+@media (max-width: 375px) {
+    body::before{
+        height: 200vh;
+    }
+
+    .dashboard{
+        top: 120%;
+    }
+
+    .sub-content{
+        flex-direction: column;
+    }
+
+    .box{
+        width: 100%;
+    }
 }

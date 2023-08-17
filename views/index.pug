@@ -9,11 +9,8 @@ html(lang="en")
     body 
         section.region-input 
             form(action="" class="form")
-                div 
-                    //- label(for="country") Country 
-                    //- input(type="text" name="country" id="country")
-                    label(for="city") Region 
-                    input(type="text" name="region" id="region")    
+                label(for="city") Region 
+                input(type="text" name="region" id="region" autocomplete="off")    
                 button(type="submit" id="submitBtn") Search 
         //- Main Dashboard
         section.dashboard 
