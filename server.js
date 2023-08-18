@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 const apiKey = process.env.API_KEY;
 
 async function fetchWeatherData(region) {
-  const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${region}`;
+  const apiUrl = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${region}&days=4`;
   try {
     const response = await fetch(apiUrl);
 

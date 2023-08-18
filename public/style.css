@@ -95,7 +95,7 @@ body::before{
 
 /* header information ------------------- */
 .top .city-name{
-    color: var(--skyblue-font);
+    color: var(--white-font);
 }
 .top .date-time{
     font-size: 1.2rem;
@@ -177,12 +177,36 @@ body::before{
     opacity: 0.8;
 }
 
+.forecast h2{
+    color: var(--blue-font);
+}
+
+.forecast-box{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    background-color: var(--skyblue-font);
+    color: var(--white-font);
+    border-radius: 10px;
+    margin: 5px 0;
+    height: 30%;
+    width: 100%;
+}
+
+.forecast-box div{
+    grid-column: 2 / 5;
+}
+
+.forecast-box p{
+    margin-top: 5px;
+}
+
 /* RESPONSIVE DESIGNING */
 
 /* tablet version */
 @media (max-width: 945px){
     body::before{
-        height: 150vh;
+        height: 210vh;
     }
 
     .form{
@@ -201,7 +225,7 @@ body::before{
     }
 
     .dashboard{
-        top: 90%;
+        top: 120%;
         left: 50%;
         width: 70vw;
         grid-template-columns: auto;
@@ -249,11 +273,11 @@ body::before{
 
 @media (max-width: 375px) {
     body::before{
-        height: 200vh;
+        height: 250vh;
     }
 
     .dashboard{
-        top: 120%;
+        top: 140%;
     }
 
     .sub-content{

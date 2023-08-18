@@ -51,3 +51,23 @@ html(lang="en")
                             span.text #{weatherData.current.cloud} %
 
             section.forecast 
+                 if weatherData.forecast && weatherData.forecast.forecastday.length >= 4 
+                    h2 Weekly Forecast 
+                    .forecast-box 
+                        img(src=weatherData.forecast.forecastday[1].day.condition.icon, alt="")
+                        div 
+                            p #{weatherData.forecast.forecastday[1].date}
+                            p #{weatherData.forecast.forecastday[1].day.avgtemp_c} &deg;C
+                            p #{weatherData.forecast.forecastday[1].day.condition.text}
+                    .forecast-box 
+                        img(src=weatherData.forecast.forecastday[2].day.condition.icon, alt="")
+                        div 
+                            p #{weatherData.forecast.forecastday[2].date} 
+                            p #{weatherData.forecast.forecastday[2].day.avgtemp_c} &deg;C
+                            p #{weatherData.forecast.forecastday[2].day.condition.text}
+                    .forecast-box 
+                        img(src=weatherData.forecast.forecastday[3].day.condition.icon, alt="")
+                        div 
+                            p #{weatherData.forecast.forecastday[3].date} 
+                            p #{weatherData.forecast.forecastday[3].day.avgtemp_c} &deg;C
+                            p #{weatherData.forecast.forecastday[3].day.condition.text}
