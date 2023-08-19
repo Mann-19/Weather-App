@@ -7,7 +7,7 @@ const app = express();
 app.set("view engine", "pug");
 app.set("views", __dirname + "/views");
 
-app.use(express.static("public"));
+app.use(express.static(__dirname + "/public/"));
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.urlencoded({ extended: false }));
 
