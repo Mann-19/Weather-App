@@ -12,7 +12,7 @@ Step into the world of meteorological marvels! This solution not only fetches re
 
 ### 📸 Screenshot
 
-![Project Showcase](https://imgur.com/gallery/LGohdxi)
+[Project Showcase](https://imgur.com/gallery/LGohdxi)
 
 ### 🔗 Links
 
@@ -53,8 +53,8 @@ Your contributions are welcomed with open arms! Should you find any issues or po
 ## 👨‍💻 Author
 
 🌐 Mann Prajapati
-GitHub: @Mann-19
-Twitter: @Mann_196
+- [GitHub](https://github.com/Mann-19)
+- [Twitter](https://twitter.com/Mann_196)
 
 ## 🙏 Acknowledgments
 WeatherAPI for providing reliable weather data.
